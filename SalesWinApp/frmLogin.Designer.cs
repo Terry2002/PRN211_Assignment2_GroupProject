@@ -34,7 +34,7 @@
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.btnCLose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,62 +43,58 @@
             this.lbLogin.AutoSize = true;
             this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbLogin.Location = new System.Drawing.Point(149, 33);
+            this.lbLogin.Location = new System.Drawing.Point(184, 24);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(230, 35);
+            this.lbLogin.Size = new System.Drawing.Size(69, 28);
             this.lbLogin.TabIndex = 0;
-            this.lbLogin.Text = "WelCome To FStore";
+            this.lbLogin.Text = "LOGIN";
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(42, 125);
+            this.lbEmail.Location = new System.Drawing.Point(37, 94);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(46, 20);
+            this.lbEmail.Size = new System.Drawing.Size(36, 15);
             this.lbEmail.TabIndex = 1;
             this.lbEmail.Text = "Email";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(42, 192);
+            this.lbPassword.Location = new System.Drawing.Point(37, 144);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(70, 20);
+            this.lbPassword.Size = new System.Drawing.Size(57, 15);
             this.lbPassword.TabIndex = 2;
             this.lbPassword.Text = "Password";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(149, 121);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Location = new System.Drawing.Point(130, 91);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(269, 27);
+            this.txtEmail.Size = new System.Drawing.Size(236, 23);
             this.txtEmail.TabIndex = 3;
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(149, 181);
-            this.txtPassWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassWord.Location = new System.Drawing.Point(130, 136);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(269, 27);
+            this.txtPassWord.Size = new System.Drawing.Size(236, 23);
             this.txtPassWord.TabIndex = 4;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(98, 264);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 31);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogin.Location = new System.Drawing.Point(86, 198);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // btnCLose
             // 
-            this.btnCLose.Location = new System.Drawing.Point(333, 264);
-            this.btnCLose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCLose.Location = new System.Drawing.Point(291, 198);
             this.btnCLose.Name = "btnCLose";
-            this.btnCLose.Size = new System.Drawing.Size(86, 31);
+            this.btnCLose.Size = new System.Drawing.Size(75, 23);
             this.btnCLose.TabIndex = 6;
             this.btnCLose.Text = "Close";
             this.btnCLose.UseVisualStyleBackColor = true;
@@ -106,19 +102,18 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(499, 329);
+            this.ClientSize = new System.Drawing.Size(437, 247);
             this.Controls.Add(this.btnCLose);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassWord);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -134,7 +129,7 @@
         private Label lbPassword;
         private TextBox txtEmail;
         private TextBox txtPassWord;
-        private Button button1;
+        private Button btnLogin;
         private Button btnCLose;
     }
 }
