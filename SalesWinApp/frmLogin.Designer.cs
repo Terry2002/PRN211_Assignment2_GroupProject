@@ -33,7 +33,7 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPassWord = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCLose = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -74,30 +74,33 @@
             this.txtEmail.Size = new System.Drawing.Size(236, 23);
             this.txtEmail.TabIndex = 3;
             // 
-            // txtPassWord
+            // txtPassword
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(130, 136);
-            this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(236, 23);
-            this.txtPassWord.TabIndex = 4;
+            this.txtPassword.Location = new System.Drawing.Point(130, 136);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(236, 23);
+            this.txtPassword.TabIndex = 4;
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnLogin.Location = new System.Drawing.Point(86, 198);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCLose
             // 
+            this.btnCLose.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnCLose.Location = new System.Drawing.Point(291, 198);
             this.btnCLose.Name = "btnCLose";
             this.btnCLose.Size = new System.Drawing.Size(75, 23);
             this.btnCLose.TabIndex = 6;
             this.btnCLose.Text = "Close";
-            this.btnCLose.UseVisualStyleBackColor = true;
+            this.btnCLose.UseVisualStyleBackColor = false;
             this.btnCLose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmLogin
@@ -108,7 +111,7 @@
             this.ClientSize = new System.Drawing.Size(437, 247);
             this.Controls.Add(this.btnCLose);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassWord);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
@@ -128,7 +131,7 @@
         private Label lbEmail;
         private Label lbPassword;
         private TextBox txtEmail;
-        private TextBox txtPassWord;
+        private TextBox txtPassword;
         private Button btnLogin;
         private Button btnCLose;
     }
