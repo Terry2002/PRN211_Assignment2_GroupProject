@@ -13,8 +13,8 @@ namespace SalesWinApp
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            Configuration = builder.Build();
+            var build = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            Configuration = build.Build();
             ApplicationConfiguration.Initialize();
             Application.Run(new frmLogin());
         }

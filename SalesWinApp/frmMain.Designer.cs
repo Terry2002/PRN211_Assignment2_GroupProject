@@ -97,6 +97,7 @@
             this.Controls.Add(this.btnMembersManagement);
             this.Controls.Add(this.lbWelcome);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.ResumeLayout(false);
             this.PerformLayout();

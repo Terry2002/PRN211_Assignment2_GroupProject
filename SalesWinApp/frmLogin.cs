@@ -1,5 +1,7 @@
 using BusinessObject;
 using Microsoft.Extensions.Configuration;
+using System.Windows.Forms;
+
 namespace SalesWinApp
 {
     public partial class frmLogin : Form
@@ -16,9 +18,9 @@ namespace SalesWinApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var adminDefaultSettings = Program.Configuration.GetSection("AdminAccount");//.Get<MemberObject>();
-            var adminEmail = adminDefaultSettings;//.Email
-            var adminPassword = adminDefaultSettings;//Password
+            var adminDefaultSettings = Program.Configuration.GetSection("AdminAccount").Get<MemberObject>();//.Get<MemberObject>();
+            var adminEmail = adminDefaultSettings.Email;//.Email
+            var adminPassword = adminDefaultSettings.Password;//Password
             var email = txtEmail.Text;
             var password = txtPassword.Text;
 
