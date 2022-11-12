@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using DataAccess.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace SalesWinApp
 {
     public partial class frmAddMembers : Form
     {
+        public IMemberRepository MemberRepository { get; set; }
+        public MemberObject UserProfile { get; set; }
+        public bool InsertOrUpdate { get; set; }
         public frmAddMembers()
         {
             InitializeComponent();

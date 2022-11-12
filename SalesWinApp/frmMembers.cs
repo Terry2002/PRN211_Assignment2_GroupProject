@@ -36,14 +36,14 @@ namespace SalesWinApp
         }
         private void DvgUserList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmMemberInfo memberInfo = new frmMemberInfo
+            frmAddMembers member = new frmAddMembers
             {
                 Text = "Update User",
                 InsertOrUpdate = true,
                 UserProfile = GetUser(),
                 MemberRepository = MemberRepository,
             };
-            if (memberInfo.ShowDialog() == DialogResult.Cancel)
+            if (member.ShowDialog() == DialogResult.Cancel)
             {
                 LoadUsers();
                 source.Position = source.Count - 1;
@@ -124,13 +124,13 @@ namespace SalesWinApp
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmMemberInfo memberInfo = new frmMemberInfo()
+            frmAddMembers member = new frmAddMembers
             {
                 InsertOrUpdate = false,
                 Text = "Create User",
                 MemberRepository = MemberRepository,
             };
-            if (memberInfo.ShowDialog() == DialogResult.Cancel)
+            if (member.ShowDialog() == DialogResult.Cancel)
             {
                 LoadUsers();
                 source.Position = source.Count - 1;
