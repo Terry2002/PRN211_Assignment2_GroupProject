@@ -73,6 +73,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(236, 23);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "admin@fstore.com";
             // 
             // txtPassword
             // 
@@ -80,6 +81,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(236, 23);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "admin@@";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin

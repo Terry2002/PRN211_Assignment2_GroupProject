@@ -16,5 +16,20 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+
+        private void lbSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmOrders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

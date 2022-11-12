@@ -16,5 +16,34 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMembersManagement_Click(object sender, EventArgs e)
+        {
+            frmMembers frmmenber = new frmMembers();
+            this.Hide();
+            frmmenber.ShowDialog();
+            this.Show();
+        }
+
+        private void btnProductManagement_Click(object sender, EventArgs e)
+        {
+            frmProducts frmproduct = new frmProducts();
+            this.Hide();
+            frmproduct.ShowDialog();
+            this.Show();
+        }
+
+        private void btnOrderManagement_Click(object sender, EventArgs e)
+        {
+            frmOrders frmorder = new frmOrders();
+            this.Hide();
+            frmorder.ShowDialog();
+            this.Show();
+        }
     }
 }

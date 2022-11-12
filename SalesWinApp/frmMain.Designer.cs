@@ -31,7 +31,7 @@
             this.lbWelcome = new System.Windows.Forms.Label();
             this.btnMembersManagement = new System.Windows.Forms.Button();
             this.btnProductManagement = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOrderManagement = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.btnMembersManagement.TabIndex = 1;
             this.btnMembersManagement.Text = "Menber Management";
             this.btnMembersManagement.UseVisualStyleBackColor = false;
+            this.btnMembersManagement.Click += new System.EventHandler(this.btnMembersManagement_Click);
             // 
             // btnProductManagement
             // 
@@ -65,16 +66,18 @@
             this.btnProductManagement.TabIndex = 2;
             this.btnProductManagement.Text = "Product Management";
             this.btnProductManagement.UseVisualStyleBackColor = false;
+            this.btnProductManagement.Click += new System.EventHandler(this.btnProductManagement_Click);
             // 
-            // button2
+            // btnOrderManagement
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button2.Location = new System.Drawing.Point(579, 234);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Menber Management";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnOrderManagement.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnOrderManagement.Location = new System.Drawing.Point(579, 234);
+            this.btnOrderManagement.Name = "btnOrderManagement";
+            this.btnOrderManagement.Size = new System.Drawing.Size(171, 23);
+            this.btnOrderManagement.TabIndex = 3;
+            this.btnOrderManagement.Text = "Order Management";
+            this.btnOrderManagement.UseVisualStyleBackColor = false;
+            this.btnOrderManagement.Click += new System.EventHandler(this.btnOrderManagement_Click);
             // 
             // btnLogOut
             // 
@@ -85,6 +88,7 @@
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // frmMain
             // 
@@ -92,7 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 364);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnOrderManagement);
             this.Controls.Add(this.btnProductManagement);
             this.Controls.Add(this.btnMembersManagement);
             this.Controls.Add(this.lbWelcome);
@@ -109,7 +113,7 @@
         private Label lbWelcome;
         private Button btnMembersManagement;
         private Button btnProductManagement;
-        private Button button2;
+        private Button btnOrderManagement;
         private Button btnLogOut;
     }
 }
