@@ -69,7 +69,7 @@ namespace DataAccess
         // GET A MEMBER FROM TABLE "Member"
         public List<MemberObject> GetUsers()
         {
-            string SQLSelect = "SELECT MemberId, Email, CompanyName, City, Country, Password FROM Member";
+            string SQLSelect = "SELECT MemberId, Email, CompanyName, City, Country, Password FROM Members";
             var users = new List<MemberObject>();
             IDataReader dataReader = null;
             try
