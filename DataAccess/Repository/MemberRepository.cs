@@ -9,34 +9,16 @@ namespace DataAccess.Repository
 {
     public class MemberRepository : IMemberRepository
     {
-        public void DeleteMember(int user)
-        {
-            throw new NotImplementedException();
-        }
+        public void DeleteMember(int user) => MemberDAO.Instance.Delete(user);
 
-        public IEnumerable<string> GetMemberIDs()
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<string> GetMemberIDs() => MemberDAO.Instance.GetUsersID();
 
-        public IEnumerable<MemberObject> GetMembers()
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<MemberObject> GetMembers() => MemberDAO.Instance.GetUsers();
 
-        public void InsertMember(MemberObject user)
-        {
-            throw new NotImplementedException();
-        }
+        public void InsertMember(MemberObject user) => MemberDAO.Instance.Create(user);
 
-        public MemberObject Login(string email, string password)
-        {
-            throw new NotImplementedException();
-        }
+        public MemberObject Login(string email, string password) => MemberDAO.Instance.Login(email, password);
 
-        public void UpdateMember(MemberObject user)
-        {
-            throw new NotImplementedException();
-        }
+        public void UpdateMember(MemberObject user) => MemberDAO.Instance.Update(user);
     }
 }
