@@ -122,7 +122,22 @@ namespace SalesWinApp
         {
             LoadUsers();
         }
-        private void btnNew_Click(object sender, EventArgs e)
+        /*private void btnNew_Click(object sender, EventArgs e)
+        {
+            frmAddMembers member = new frmAddMembers
+            {
+                InsertOrUpdate = false,
+                Text = "Create User",
+                MemberRepository = MemberRepository,
+            };
+            if (member.ShowDialog() == DialogResult.Cancel)
+            {
+                LoadUsers();
+                source.Position = source.Count - 1;
+            }
+        }*/
+
+        private void btnNew_Click_1(object sender, EventArgs e)
         {
             frmAddMembers member = new frmAddMembers
             {

@@ -21,5 +21,68 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+
+        private void frmAddMembers_Load(object sender, EventArgs e)
+        {
+            txtMemberID.Enabled = !InsertOrUpdate;
+            if (InsertOrUpdate == true)
+            {
+                txtMemberID.Text = UserProfile.MemberId.ToString();
+                txtEmail.Text = UserProfile.Email;
+                txtPassword.Text = UserProfile.Password;
+                txtCountry.Text = UserProfile.Country;
+                txtCity.Text = UserProfile.City;
+                txtCompanyName.Text = UserProfile.CompanyName;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var user = new MemberObject()
+                {
+                    MemberId = int.Parse(txtMemberID.Text.Trim()),
+                    Email = txtEmail.Text.Trim(),
+                    Password = txtPassword.Text.Trim(),
+                    Country = txtCountry.Text.Trim(),
+                    City = txtCity.Text.Trim(),
+                    CompanyName = txtCompanyName.Text.Trim(),
+                };
+                if (InsertOrUpdate == false)
+                {
+                    if (txtMemberID.Text.Trim().Length != 0 && txtEmail.Text.Trim().Length != 0 && txtPassword.Text.Trim().Length != 0)
+                    {
+                        MemberRepository.InsertMember(user);
+                        MessageBox.Show("Add successfully");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("MemberID, Email and Password must not be empty");
+                    }
+                }
+                else
+                {
+                    if (txtEmail.Text.Trim().Length != 0 && txtPassword.Text.Trim().Length != 0)
+                    {
+                        MemberRepository.UpdateMember(user);
+                        MessageBox.Show("Update successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("MemberID, Email and Password must not be empty");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, InsertOrUpdate == false ? "Add failed" : "Update falied");
+                Close();
+            }
+        }
+
+        private void btnCLose_Click(object sender, EventArgs e) => Close();
+
     }
 }
