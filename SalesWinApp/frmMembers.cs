@@ -20,6 +20,18 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+        private string _adminName;
+        private string _name;
+        public string adminName
+        {
+            get { return _adminName; }
+            set { _adminName = value; }
+        }
+        public string name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
         private void ClearText()
         {
             txtMemberID.Text = "";
@@ -121,6 +133,13 @@ namespace SalesWinApp
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadUsers();
+            if( _adminName != null)
+            {
+                btnDelete.Enabled = true;
+            }else
+            {
+                btnDelete.Enabled = false;
+            }
         }
         /*private void btnNew_Click(object sender, EventArgs e)
         {

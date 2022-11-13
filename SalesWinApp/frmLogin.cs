@@ -1,12 +1,15 @@
 using BusinessObject;
+using DataAccess.Repository;
 using Microsoft.Extensions.Configuration;
 using System.Windows.Forms;
+using DataAccess.Repository;
 
 namespace SalesWinApp
 {
     public partial class frmLogin : Form
     {
         public static IConfiguration Configuration;
+        public IMemberRepository MemberRepository = new MemberRepository();
         public frmLogin()
         {
             InitializeComponent();
@@ -24,17 +27,18 @@ namespace SalesWinApp
             var adminDefaultSettings = Configuration.GetSection("AdminAccount").Get<MemberObject>();
             var adminEmail = adminDefaultSettings.Email;
             var adminPassword = adminDefaultSettings.Password;
+            var adminCompanyname = adminDefaultSettings.CompanyName;
             var email = txtEmail.Text;
             var password = txtPassword.Text;
 
             if (String.IsNullOrEmpty(email))
             {
-                MessageBox.Show("Your is email is empty or wrong Information and try again!");
+                MessageBox.Show("Your email is empty or wrong Information and try again!");
 
             }
             else if (String.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Your is password is empty or wrong Information and try again!");
+                MessageBox.Show("Your password is empty or wrong Information and try again!");
             }
             else
             {
@@ -43,18 +47,32 @@ namespace SalesWinApp
                     if (email.Equals(adminEmail) && password.Equals(adminPassword))
                     {
                         frmMain frmMain = new frmMain();
+                        frmMain.adminName = adminCompanyname;
                         this.Hide();
                         frmMain.ShowDialog();
                         this.Show();
                     }
                     else
-                    {                      
-                            MessageBox.Show("Not Suppose Yet");                      
+                    {
+                        MemberObject accountInfo = MemberRepository.Login(email, password);
+                        var companyName = accountInfo.CompanyName;
+                        if (accountInfo == null)
+                        {
+                            MessageBox.Show("Email or password is incorrect or wrong information and try again!");
+                        }
+                        else
+                        {
+                            frmMain frmMain = new frmMain();
+                            frmMain.name = companyName;
+                            this.Hide();
+                            frmMain.ShowDialog();
+                            this.Show();
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Something went wrong");
+                    MessageBox.Show(ex.Message, "Something wrong");
                 }
             }
         }

@@ -33,6 +33,7 @@
             this.btnProductManagement = new System.Windows.Forms.Button();
             this.btnOrderManagement = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.lbName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbWelcome
@@ -90,11 +91,22 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbName.Location = new System.Drawing.Point(237, 119);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(47, 37);
+            this.lbName.TabIndex = 5;
+            this.lbName.Text = ".....";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 364);
+            this.Controls.Add(this.lbName);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnOrderManagement);
             this.Controls.Add(this.btnProductManagement);
@@ -103,6 +115,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +128,6 @@
         private Button btnProductManagement;
         private Button btnOrderManagement;
         private Button btnLogOut;
+        private Label lbName;
     }
 }

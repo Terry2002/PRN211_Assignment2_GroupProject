@@ -16,7 +16,18 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
-
+        private string _adminName;
+        private string _name;
+        public string adminName
+        {
+            get { return _adminName ; }
+            set { _adminName = value; }
+        }
+        public string name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -25,6 +36,14 @@ namespace SalesWinApp
         private void btnMembersManagement_Click(object sender, EventArgs e)
         {
             frmMembers frmmenber = new frmMembers();
+            if (_adminName != null)
+            {
+                frmmenber.adminName = _adminName;
+            }
+            else
+            {
+                frmmenber.name = _adminName;
+            }
             this.Hide();
             frmmenber.ShowDialog();
             this.Show();
@@ -44,6 +63,17 @@ namespace SalesWinApp
             this.Hide();
             frmorder.ShowDialog();
             this.Show();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if(_adminName != null)
+            {
+                lbName.Text = _adminName;
+            }else
+            {
+                lbName.Text = _name;
+            }       
         }
     }
 }
