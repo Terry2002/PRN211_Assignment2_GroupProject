@@ -61,6 +61,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(733, 229);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -302,8 +303,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private Button btnSearch;
         private Label label2;
         private ComboBox cboTypeSearch;
@@ -326,5 +325,6 @@
         private Label lbProductName;
         private Label lbProductID;
         private Label lbSearch;
+        private DataGridView dataGridView1;
     }
 }

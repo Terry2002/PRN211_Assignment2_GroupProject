@@ -1,6 +1,6 @@
 ﻿namespace SalesWinApp
 {
-    partial class frmAddMembers
+    partial class frmMembersControl
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnCLose = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
@@ -89,15 +89,15 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "City";
             // 
-            // btnAdd
+            // btnSave
             // 
-            this.btnAdd.Location = new System.Drawing.Point(36, 372);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnSave.Location = new System.Drawing.Point(36, 372);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCLose
             // 
@@ -181,7 +181,7 @@
             this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnCLose);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -203,7 +203,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Button btnAdd;
+        private Button btnSave;
         private Button btnCLose;
         private TextBox txtEmail;
         private TextBox txtCompanyName;

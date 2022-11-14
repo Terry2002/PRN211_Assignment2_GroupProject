@@ -26,6 +26,7 @@ namespace SalesWinApp
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
+            txtProductID.Enabled = !InsertOrUpdate;
             if (InsertOrUpdate)
             {
                 txtProductID.Text = ProductInfo.ProductId.ToString();

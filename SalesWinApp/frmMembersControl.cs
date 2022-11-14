@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace SalesWinApp
 {
-    public partial class frmAddMembers : Form
+    public partial class frmMembersControl : Form
     {
         public IMemberRepository MemberRepository { get; set; }
         public MemberObject UserProfile { get; set; }
         public bool InsertOrUpdate { get; set; }
-        public frmAddMembers()
+        public frmMembersControl()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace SalesWinApp
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {

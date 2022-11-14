@@ -52,7 +52,7 @@ namespace SalesWinApp
             LoadOrders();
             GetProducts();
             GetUserIDs();
-            /*dgvOrder.CellDoubleClick += DvgOrderList_CellDoubleClick;*/
+            dgvOrder.CellDoubleClick +=dgvOrder_CellDoubleClick;
         }
         public void LoadOrders()
         {
@@ -146,9 +146,69 @@ namespace SalesWinApp
             }
         }
 
-        private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var order = GetOrder();
+                List<OrderDetailObject> listDetail = OrderDetailRepository.GetOrdersByOrderID(order.OrderId).ToList<OrderDetailObject>();
+                DialogResult isDeleted = MessageBox.Show("Do you really want to delete?", "Deleting", MessageBoxButtons.YesNo);
+                if (isDeleted == DialogResult.Yes)
+                {
+                    if (listDetail.Count > 0)
+                    {
+                        OrderDetailRepository.DeleteListOrderDetail(order.OrderId);
+                    }
+                    OrderRepository.DeleteOrder(order.OrderId);
+                    MessageBox.Show("Delete order successfully");
+                    LoadOrders();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Deleting order failed");
+            }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmOrderControl frmOrderControl = new frmOrderControl()
+            {
+                Text = "Order",
+                InsertOrUpdate = false,
+                ListOrderDetail = new List<OrderDetailObject>(),
+                ListMemberID = userIDs,
+                ListProduct = products,
+                OrderDetailRepository = OrderDetailRepository,
+                OrderRepository = OrderRepository,
+            };
+            if (frmOrderControl.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrders();
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmOrderControl frmOrderControl = new frmOrderControl()
+            {
+                Text = "Order",
+                InsertOrUpdate = true,
+                ListMemberID = userIDs,
+                ListProduct = products,
+                OrderDetailRepository = OrderDetailRepository,
+                OrderRepository = OrderRepository,
+                ListOrderDetail = OrderDetailRepository.GetOrdersByOrderID(int.Parse(txtOrderID.Text)).ToList<OrderDetailObject>(),
+                OrderInfo = GetOrder()
+            };
+            if (frmOrderControl.ShowDialog() == DialogResult.OK)
+            {
+                LoadOrders();
+                source.Position = source.Count - 1;
+
+            }
+        }
+
     }
 }
