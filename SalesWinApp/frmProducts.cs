@@ -56,14 +56,14 @@ namespace SalesWinApp
                 txtCategory.DataBindings.Clear();
                 txtWeight.DataBindings.Clear();
                 txtPrice.DataBindings.Clear();
-                txtUnitslnStock.DataBindings.Clear();
+                txtUnitsInStock.DataBindings.Clear();
 
                 txtProductID.DataBindings.Add("Text", source, "ProductID");
                 txtProductName.DataBindings.Add("Text", source, "ProductName");
                 txtCategory.DataBindings.Add("Text", source, "CategoryID");
                 txtWeight.DataBindings.Add("Text", source, "Weight");
                 txtPrice.DataBindings.Add("Text", source, "UnitPrice");
-                txtUnitslnStock.DataBindings.Add("Text", source, "UnitslnStock");
+                txtUnitsInStock.DataBindings.Add("Text", source, "UnitsInStock");
 
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = source;
@@ -91,7 +91,7 @@ namespace SalesWinApp
             txtCategory.Text = "";
             txtWeight.Text = "";
             txtPrice.Text = "";
-            txtUnitslnStock.Text = "";
+            txtUnitsInStock.Text = "";
         }
 
         private void frmProducts_Load(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace SalesWinApp
                     CategoryId = int.Parse(txtProductID.Text),
                     Weight = txtWeight.Text,
                     UnitPrice = decimal.Parse(txtPrice.Text),
-                    UnitInStock = int.Parse(txtUnitslnStock.Text),
+                    UnitsInStock = int.Parse(txtUnitsInStock.Text),
                 };
             }
             catch (Exception ex)
@@ -187,14 +187,14 @@ namespace SalesWinApp
                         txtCategory.DataBindings.Clear();
                         txtWeight.DataBindings.Clear();
                         txtPrice.DataBindings.Clear();
-                        txtUnitslnStock.DataBindings.Clear();
+                        txtUnitsInStock.DataBindings.Clear();
 
                         txtProductID.DataBindings.Add("Text", source, "ProductID");
                         txtProductName.DataBindings.Add("Text", source, "ProductName");
                         txtCategory.DataBindings.Add("Text", source, "CategoryID");
                         txtWeight.DataBindings.Add("Text", source, "Weight");
                         txtPrice.DataBindings.Add("Text", source, "UnitPrice");
-                        txtUnitslnStock.DataBindings.Add("Text", source, "UnitslnStock");
+                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitsInStock");
 
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = source;
@@ -216,7 +216,7 @@ namespace SalesWinApp
                         List<ProductObject> productsContainName = new List<ProductObject>();
                         products.ForEach(product =>
                         {
-                            if (product.ProductName.ToLower().Contains(serchKey.Trim().ToLower()))
+                            if (product.ProductName.ToLower().Contains(txtSearchKey.Text.Trim().ToLower()))
                             {
                                 productsContainName.Add(product);
                             }
@@ -229,14 +229,14 @@ namespace SalesWinApp
                         txtCategory.DataBindings.Clear();
                         txtWeight.DataBindings.Clear();
                         txtPrice.DataBindings.Clear();
-                        txtUnitslnStock.DataBindings.Clear();
+                        txtUnitsInStock.DataBindings.Clear();
 
                         txtProductID.DataBindings.Add("Text", source, "ProductID");
                         txtProductName.DataBindings.Add("Text", source, "ProductName");
                         txtCategory.DataBindings.Add("Text", source, "CategoryID");
                         txtWeight.DataBindings.Add("Text", source, "Weight");
                         txtPrice.DataBindings.Add("Text", source, "UnitPrice");
-                        txtUnitslnStock.DataBindings.Add("Text", source, "UnitslnStock");
+                        txtUnitsInStock.DataBindings.Add("Text", source, "UnitsInStock");
 
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = source;

@@ -33,7 +33,7 @@ namespace SalesWinApp
                 txtCateID.Text = ProductInfo.CategoryId.ToString();
                 txtWeight.Text = ProductInfo.Weight;
                 txtUnitPrice.Text = ProductInfo.UnitPrice.ToString();
-                txtUnitsInStock.Text = ProductInfo.UnitInStock.ToString();
+                txtUnitsInStock.Text = ProductInfo.UnitsInStock.ToString();
             }
         }
 
@@ -53,7 +53,7 @@ namespace SalesWinApp
                     CategoryId = int.Parse(txtCateID.Text.Trim()),
                     Weight = txtWeight.Text.Trim(),
                     UnitPrice = decimal.Parse(txtUnitPrice.Text.Trim()),
-                    UnitInStock = int.Parse(txtUnitsInStock.Text.Trim())
+                    UnitsInStock = int.Parse(txtUnitsInStock.Text.Trim())
                 };
                 if (InsertOrUpdate == false)
                 {
