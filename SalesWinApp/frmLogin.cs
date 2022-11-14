@@ -55,17 +55,21 @@ namespace SalesWinApp
                     else
                     {
                         MemberObject accountInfo = MemberRepository.Login(email, password);
-                        var companyName = accountInfo.CompanyName;
                         if (accountInfo == null)
                         {
                             MessageBox.Show("Email or password is incorrect or wrong information and try again!");
                         }
                         else
                         {
-                            frmMain frmMain = new frmMain();
-                            frmMain.name = companyName;
+                            frmMembersInfo frmMember = new frmMembersInfo()
+                            {
+                                Text = "Profile",
+                                InsertOrUpdate = true,
+                                UserProfile = accountInfo,
+                                MemberRepository = MemberRepository
+                            };
                             this.Hide();
-                            frmMain.ShowDialog();
+                            frmMember.ShowDialog();
                             this.Show();
                         }
                     }

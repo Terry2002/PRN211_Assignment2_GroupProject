@@ -128,6 +128,7 @@
             this.Controls.Add(this.lbProductID);
             this.Controls.Add(this.lbQuantity);
             this.Name = "frmOrderDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrderDetail";
             this.Load += new System.EventHandler(this.frmOrderDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).EndInit();

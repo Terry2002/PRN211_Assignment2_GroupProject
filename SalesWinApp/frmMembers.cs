@@ -20,18 +20,7 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
-        private string _adminName;
-        private string _name;
-        public string adminName
-        {
-            get { return _adminName; }
-            set { _adminName = value; }
-        }
-        public string name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+       
         private void ClearText()
         {
             txtMemberID.Text = "";
@@ -132,14 +121,7 @@ namespace SalesWinApp
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadUsers();
-            if( _adminName != null)
-            {
-                btnDelete.Enabled = true;
-            }else
-            {
-                btnDelete.Enabled = false;
-            }
+            LoadUsers();          
         }
         /*private void btnNew_Click(object sender, EventArgs e)
         {
@@ -189,7 +171,21 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var user = GetUser();
+                DialogResult isDeleted = MessageBox.Show("Do you really want to delete?", "Deleting", MessageBoxButtons.YesNo);
+                if (isDeleted == DialogResult.Yes)
+                {
+                    MemberRepository.DeleteMember(user.MemberId);
+                    MessageBox.Show("Delete user successfully");
+                    LoadUsers();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Deleting user failed");
+            }
         }
     }
 }
