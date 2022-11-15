@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFreight = new System.Windows.Forms.TextBox();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
             this.lbFreight = new System.Windows.Forms.Label();
             this.lbMemberID = new System.Windows.Forms.Label();
             this.lbOrderID = new System.Windows.Forms.Label();
@@ -45,26 +43,11 @@
             this.dataGridOrderInfo = new System.Windows.Forms.DataGridView();
             this.btnDeleteOrderInfo = new System.Windows.Forms.Button();
             this.btnCreateOrderInfo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.txtFreight = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrderInfo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtFreight
-            // 
-            this.txtFreight.Location = new System.Drawing.Point(149, 106);
-            this.txtFreight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFreight.Name = "txtFreight";
-            this.txtFreight.ReadOnly = true;
-            this.txtFreight.Size = new System.Drawing.Size(221, 23);
-            this.txtFreight.TabIndex = 25;
-            // 
-            // txtOrderID
-            // 
-            this.txtOrderID.Location = new System.Drawing.Point(149, 25);
-            this.txtOrderID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.ReadOnly = true;
-            this.txtOrderID.Size = new System.Drawing.Size(221, 23);
-            this.txtOrderID.TabIndex = 26;
             // 
             // lbFreight
             // 
@@ -175,7 +158,7 @@
             // dataGridOrderInfo
             // 
             this.dataGridOrderInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrderInfo.Location = new System.Drawing.Point(406, 22);
+            this.dataGridOrderInfo.Location = new System.Drawing.Point(406, 29);
             this.dataGridOrderInfo.Name = "dataGridOrderInfo";
             this.dataGridOrderInfo.RowTemplate.Height = 25;
             this.dataGridOrderInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -205,11 +188,38 @@
             this.btnCreateOrderInfo.UseVisualStyleBackColor = true;
             this.btnCreateOrderInfo.Click += new System.EventHandler(this.btnCreateOrderInfo_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(406, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 21);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "OrderDetails";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(149, 21);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(221, 23);
+            this.txtOrderID.TabIndex = 41;
+            // 
+            // txtFreight
+            // 
+            this.txtFreight.Location = new System.Drawing.Point(149, 106);
+            this.txtFreight.Name = "txtFreight";
+            this.txtFreight.Size = new System.Drawing.Size(221, 23);
+            this.txtFreight.TabIndex = 42;
+            // 
             // frmOrderControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 426);
+            this.Controls.Add(this.txtFreight);
+            this.Controls.Add(this.txtOrderID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteOrderInfo);
             this.Controls.Add(this.btnCreateOrderInfo);
             this.Controls.Add(this.dataGridOrderInfo);
@@ -222,8 +232,6 @@
             this.Controls.Add(this.dtShippedDate);
             this.Controls.Add(this.dtRequiredDate);
             this.Controls.Add(this.dtOrderDate);
-            this.Controls.Add(this.txtFreight);
-            this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.lbFreight);
             this.Controls.Add(this.lbMemberID);
             this.Controls.Add(this.lbOrderID);
@@ -238,9 +246,6 @@
         }
 
         #endregion
-
-        private TextBox txtFreight;
-        private TextBox txtOrderID;
         private Label lbFreight;
         private Label lbMemberID;
         private Label lbOrderID;
@@ -256,5 +261,8 @@
         private DataGridView dataGridOrderInfo;
         private Button btnDeleteOrderInfo;
         private Button btnCreateOrderInfo;
+        private Label label1;
+        private TextBox txtOrderID;
+        private TextBox txtFreight;
     }
 }

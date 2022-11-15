@@ -37,8 +37,8 @@ namespace SalesWinApp
             source.DataSource = ListOrderDetail;
             if (InsertOrUpdate)
             {
-                cbMemberID.Text = OrderInfo.MemberId.ToString();
                 txtOrderID.Text = OrderInfo.OrderId.ToString();
+                cbMemberID.Text = OrderInfo.MemberId.ToString();               
                 txtFreight.Text = OrderInfo.Freight.ToString();
                 dtOrderDate.Value = OrderInfo.OrderDate;
                 dtRequiredDate.Value = OrderInfo.RequiredDate;
@@ -48,7 +48,7 @@ namespace SalesWinApp
             {
                 ListMemberID.ForEach(memberID => cbMemberID.Items.Add(memberID));
                 cbMemberID.DropDownStyle = ComboBoxStyle.DropDownList;
-                cbMemberID.SelectedIndex = -1;
+                cbMemberID.SelectedIndex = 0;
             }
             dataGridOrderInfo.DataSource = null;
             dataGridOrderInfo.DataSource = source;
@@ -77,7 +77,7 @@ namespace SalesWinApp
             {
                 frmOrderDetail frmOrderDetail = new frmOrderDetail()
                 {
-                    Text = "Update Product",
+                    Text = "Update OrderDetails",
                     OrderID = int.Parse(txtOrderID.Text),
                     InsertOrUpdate = true,
                     ProductID = int.Parse(dataGridOrderInfo.CurrentRow.Cells["ProductId"].Value.ToString()),
