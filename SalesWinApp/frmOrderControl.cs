@@ -118,7 +118,7 @@ namespace SalesWinApp
                 };
                 if (InsertOrUpdate == false)
                 {
-                    if (txtOrderID.Text.Trim().Length != 0 && txtFreight.Text.Trim().Length != 0)
+                    if (txtOrderID.Text.Trim().Length != 0 && txtFreight.Text.Trim().Length != 0 && int.Parse(txtOrderID.Text) > 0 && int.Parse(txtFreight.Text) > 0)
                     {
                         OrderRepository.InsertOrder(order);
                         MessageBox.Show("Add new order successfully");
@@ -126,7 +126,7 @@ namespace SalesWinApp
                     }
                     else
                     {
-                        MessageBox.Show("One of field is empty, please fill all the field");
+                        MessageBox.Show("One of field is empty , OrderID or Freight <0  please check input again");
                     }
                 }
                 else
