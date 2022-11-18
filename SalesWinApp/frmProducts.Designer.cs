@@ -86,6 +86,7 @@
             // 
             // cboTypeSearch
             // 
+            this.cboTypeSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTypeSearch.FormattingEnabled = true;
             this.cboTypeSearch.Items.AddRange(new object[] {
             "ID",
